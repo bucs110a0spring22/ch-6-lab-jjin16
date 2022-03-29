@@ -4,7 +4,7 @@ def seq3np1(n):
     """
         Print the 3n+1 sequence from n, terminating when it reaches 1.
         args: n (int) starting value for 3n+1 sequence
-        return: None
+        return: count (int) loop count
     """
     count=0
     while(n != 1):
@@ -18,8 +18,8 @@ def seq3np1(n):
    #print(n)                  # the last print is 1
 def line_graph(upper_bound=0):
   """
-        draws the x & y-axis of the graph
-        args: upper_bound (int) starting value for 3n+1 sequence
+        draws the function graph
+        args: upper_bound (int) upper limit of the range in for loop
         return: None
   """
   max_so_far=0
@@ -47,39 +47,38 @@ def line_graph(upper_bound=0):
     if max_so_far<result:
       max_so_far=result
       window.setworldcoordinates(0,0,upper_bound+extra_space, max_so_far+extra_space)
+      updating_axis(upper_bound,max_so_far)
       writing_turtle.clear()
-      graphing_turtle.pu()
-      graphing_turtle.home()
-      graphing_turtle.pd()
-      graphing_turtle.fd(upper_bound)
-      graphing_turtle.pu()
-      graphing_turtle.home()
-      graphing_turtle.lt(right_angle)
-      graphing_turtle.pd()
-      graphing_turtle.fd(max_so_far)
-      graphing_turtle.pu()
-      graphing_turtle.goto(start,result)
       writing_turtle.pu()
       writing_turtle.goto(0,max_so_far)
       writing_turtle.write(f"Maximum so far: {start}, {result}")
     graphing_turtle.pd()
     graphing_turtle.goto(start,result)
     graphing_turtle.dot()
-    time.sleep(0.5) 
   window.exitonclick()
-def connecting_dots(x=0, y=0):
+def updating_axis(x_axis_length=0, y_axis_length=0):
   """
-        Print the 3n+1 sequence from n, terminating when it reaches 1.
-        args: n (int) starting value for 3n+1 sequence
+        redraws the length of the axis to fit the graph
+        args: 
+        x_axis_length (int) x-axis length
+        y_axis_length (int) y-axis length
         return: None
   """
-  connecting_turtle=turtle.Turtle()
-  connecting_turtle.pd()
-  connecting_turtle.goto(x,y)
+  axis=turtle.Turtle()
+  hidden_turtle_size=0.01
+  axis.shapesize(hidden_turtle_size)
+  right_angle=90
+  axis.pu()
+  axis.home()
+  axis.pd()
+  axis.fd(x_axis_length)
+  axis.home()
+  axis.lt(right_angle)
+  axis.fd(y_axis_length)
 def main():
   """
-        Print the 3n+1 sequence from n, terminating when it reaches 1.
-        args: n (int) starting value for 3n+1 sequence
+        uses the defined functions to run the program
+        args:   None
         return: None
   """
   upper_bound= int(input("Upper bound:"))
