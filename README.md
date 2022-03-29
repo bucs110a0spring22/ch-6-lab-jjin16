@@ -8,18 +8,22 @@
 _Replace anything surrounded by the `< >` symbols._
 
 ## SUMMARY:
- < Provide a short description of your program's functionality. No more than a couple sentences. >
+The program draws out the specific graph of the function while printing out the results on the console.
 
 ## GRACE DAYS
-Grace days used for this assignment: < # >
+Grace days used for this assignment: 0
 
-Grace days remaining: < # >/5
+Grace days remaining: 5/5
 
 ## KNOWN BUGS AND INCOMPLETE PARTS:
- < What parts of the project you were not able to complete >
+ none
 
 ## REFERENCES:
- < List any outside resources used >
+1. https://stackoverflow.com/questions/35077439/how-to-return-value-from-for-loop-in-python
+2. https://docs.python.org/3/library/turtle.html#turtle.mode
+3. https://www.w3schools.com/python/ref_func_range.asp
+4. https://java2blog.com/exit-program-python/
+5. https://stackoverflow.com/questions/5685406/inconsistent-use-of-tabs-and-spaces-in-indentation
 
 ## MISCELLANEOUS COMMENTS:
- < Anything you would like the grader to know >
+none

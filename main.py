@@ -17,6 +17,11 @@ def seq3np1(n):
     return count
    #print(n)                  # the last print is 1
 def line_graph(upper_bound=0):
+  """
+        draws the x & y-axis of the graph
+        args: upper_bound (int) starting value for 3n+1 sequence
+        return: None
+  """
   max_so_far=0
   extra_space=10
   right_angle=90
@@ -53,16 +58,31 @@ def line_graph(upper_bound=0):
       graphing_turtle.pd()
       graphing_turtle.fd(max_so_far)
       graphing_turtle.pu()
+      graphing_turtle.goto(start,result)
       writing_turtle.pu()
       writing_turtle.goto(0,max_so_far)
       writing_turtle.write(f"Maximum so far: {start}, {result}")
+    graphing_turtle.pd()
     graphing_turtle.goto(start,result)
     graphing_turtle.dot()
-    time.sleep(3)
-  
+    time.sleep(0.5) 
+  window.exitonclick()
+def connecting_dots(x=0, y=0):
+  """
+        Print the 3n+1 sequence from n, terminating when it reaches 1.
+        args: n (int) starting value for 3n+1 sequence
+        return: None
+  """
+  connecting_turtle=turtle.Turtle()
+  connecting_turtle.pd()
+  connecting_turtle.goto(x,y)
 def main():
+  """
+        Print the 3n+1 sequence from n, terminating when it reaches 1.
+        args: n (int) starting value for 3n+1 sequence
+        return: None
+  """
   upper_bound= int(input("Upper bound:"))
-  #start=1
   if upper_bound<=0:
     quit()
   for start in range(1,upper_bound+1):
@@ -73,16 +93,3 @@ def main():
   line_graph(upper_bound)
   
 main()
-def testing():
-  block=turtle.Screen()
-  block.setworldcoordinates(0,0,20,20)
-  box= turtle.Turtle()
-  box.pd()
-  box.fd(10)
-  box.pu()
-  box.goto(0,0)
-  box.lt(90)
-  box.pd()
-  box.fd(10)
-  time.sleep(3)
-#testing()
